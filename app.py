@@ -5,9 +5,6 @@ import json
 import openai
 import re
 
-# info
-import constants
-
 # código de ahorro impuestos
 from calculate_apv import calculate_apv_savings, recommend_best_regimen  # Import the module
 
@@ -20,7 +17,7 @@ OPENAI_API_KEY = os.getenv('OPENAI_KEY')
 openai.api_key = OPENAI_API_KEY
 
 # AI model
-ai_model=constants.MODEL
+ai_model="gpt-4o-mini"
 
 # Cargar el contexto
 with open("contexto_APV.txt", 'r') as f:
