@@ -1,0 +1,39 @@
+{
+  "proceso_formalizacion": {
+    "definicion": "El conjunto de trámites y procedimientos necesarios para que una iniciativa de emprendimiento se constituya como una entidad propia y cumpla con las normativas y regulaciones laborales, sanitarias, municipales, tributarias, entre otras.",
+    "pasos": [
+      "Decidir tipo de empresa",
+      "Constitución legal de la empresa",
+      "Publicación en el Diario Oficial",
+      "Inscripción en el Registro de Comercio",
+      "Obtención del RUT y Declaración de Inicio de Actividades en el SII",
+      "Patente Municipal, permisos sanitarios y otros"
+    ]
+  },
+  "ventajas_formalizacion": [
+    "Acceso a cotizaciones de salud y jubilación",
+    "Separación del patrimonio personal y empresarial",
+    "Acceso a créditos y financiamiento",
+    "Participación en licitaciones y subsidios estatales",
+    "Mejora de la imagen y credibilidad de la empresa"
+  ],
+  "como_formalizar": {
+    "decidir_tipo_empresa": "Elegir la estructura legal que mejor se adapte a las necesidades del negocio, como Empresa Individual de Responsabilidad Limitada (EIRL), Sociedad de Responsabilidad Limitada (SRL), Sociedad por Acciones (SpA), entre otras.",
+    "constitucion_legal": "Redactar y legalizar la escritura de constitución de la empresa ante notario.",
+    "publicacion_diario_oficial": "Publicar un extracto de la escritura de constitución en el Diario Oficial dentro de los 60 días posteriores a la firma.",
+    "inscripcion_registro_comercio": "Inscribir la empresa en el Registro de Comercio correspondiente al domicilio de la empresa.",
+    "obtencion_rut_sii": "Obtener el RUT de la empresa y realizar la Declaración de Inicio de Actividades ante el SII.",
+    "patente_municipal_permisos": "Solicitar la patente municipal y otros permisos necesarios según la actividad económica de la empresa."
+  },
+  "inicio_actividades_permisos": {
+    "declaracion_inicio_actividades": "Presentar la Declaración Jurada de Inicio de Actividades ante el SII, ya sea en línea o en la oficina correspondiente.",
+    "permisos_necesarios": "Obtener todos los permisos requeridos para operar legalmente, según la naturaleza del negocio."
+  },
+  "patente_municipal_otros_permisos": {
+    "obtener_patente": "Después de la constitución legal y la declaración de inicio de actividades, solicitar la patente municipal en la municipalidad correspondiente al domicilio comercial.",
+    "permisos_adicionales": "Dependiendo de la actividad económica, pueden requerirse permisos adicionales, como sanitarios o sectoriales."
+  },
+  "formalizacion_cooperativas": {
+    "proceso": "La formalización de cooperativas sigue un proceso específico que incluye la constitución legal, inscripción en los registros correspondientes y obtención de permisos necesarios."
+  }
+}

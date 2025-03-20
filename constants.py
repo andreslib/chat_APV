@@ -1,0 +1,4 @@
+# project constants
+
+OPENAI_KEY = "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"
+MODEL="gpt-4o-mini"

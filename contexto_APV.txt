@@ -1,0 +1,93 @@
+**APV en Chile: Contexto para Chatbot**
+
+### 1. ¿Qué es el APV?
+- Es una modalidad de ahorro en Chile regulada por la Comisión del Mercado Financiero (CMF).
+- Diseñada principalmente para la jubilación, aunque también puede usarse para otros fines.
+- Disponible para trabajadores dependientes e independientes con capacidad de ahorro.
+- Existen distintas modalidades con beneficios e incentivos tributarios.
+
+### 2. Tipos de APV
+- **Cotizaciones Voluntarias**: Aportes adicionales a la cuenta de AFP del trabajador (exclusivo de AFPs).
+- **Depósitos de Ahorro Previsional Voluntario**: Aportes realizados a instituciones autorizadas para complementar el ahorro previsional.
+- **Depósitos Convenidos**: Aportes hechos por el empleador a una cuenta de ahorro previsional del trabajador, con restricciones en su retiro.
+
+### 3. Instituciones que ofrecen APV
+Reguladas por la CMF, incluyen:
+- Administradoras de Fondos de Pensiones (AFP)
+- Administradoras de Fondos Mutuos
+- Administradoras de Fondos de Inversión
+- Bancos
+- Compañías de Seguros de Vida
+- Administradoras Generales de Fondos (AGF)
+- Corredores de bolsa y agentes de valores
+
+### 4. Funcionamiento del Ahorro en APV
+- Se abre una cuenta en una institución certificada.
+- Se realizan abonos permanentes o esporádicos.
+- Los fondos se pueden invertir en distintos instrumentos financieros con diferentes niveles de riesgo.
+- Se exige una encuesta de perfil de riesgo al abrir la cuenta.
+- Los fondos pueden retirarse en cualquier momento, salvo los depósitos convenidos.
+- Existen incentivos tributarios para fomentar el retiro en la jubilación.
+
+### 5. Regímenes Tributarios del APV
+- **Régimen A**:
+  - Bonificación fiscal del 15% de lo ahorrado anualmente (tope: 6 UTM/año).
+  - Si se retira antes de la jubilación, se pierde el 15% de bonificación.
+- **Régimen B**:
+  - Rebaja la base imponible del impuesto global complementario (tope: UF 50 mensual o UF 600 anual).
+  - Si se retira antes de la jubilación, el monto retirado se suma a la renta imponible del año.
+
+### 6. Requisitos para abrir una cuenta APV
+- Ser mayor de 18 años.
+- Ser trabajador dependiente, independiente o pensionado.
+- Tener cédula de identidad vigente.
+- Haber cotizado en AFP o Instituto de Previsión Social (IPS).
+
+### 7. Modalidades de Depósitos APV
+- **Descuento Mensual por el Empleador**: Se descuenta desde la liquidación de sueldo con beneficio tributario inmediato.
+- **Depósito Directo**: Se realiza directamente a la institución y la exención tributaria se calcula en la devolución anual de impuestos.
+
+### 8. Depósito Convenido
+- Depósitos voluntarios hechos por la empresa en la cuenta del trabajador.
+- No obligatorios; requieren acuerdo entre empleador y trabajador.
+- No tienen límite anual de aportes.
+- No se pueden retirar antes de la jubilación.
+- Al jubilarse:
+  - Se pueden retirar hasta UF 800 sin impuestos.
+  - El exceso sobre UF 800 debe usarse para pensión y tributa como renta.
+
+### 9. Factores Claves para Elegir un Proveedor de APV
+- **Segmento de renta**: Para evaluar el beneficio tributario.
+- **Costos**: Tarifas asociadas al fondo y seguros.
+- **Rentabilidad**: Evaluación del riesgo y horizonte de inversión.
+
+### 10. Fuentes de Información Adicional
+- CMF: https://www.cmfchile.cl/
+- Superintendencia de Pensiones: https://www.spensiones.cl/
+- Valores UTM y UF: https://www.sii.cl/valores_y_fechas/
+
+
+Comparando Ahorro Previsional Voluntario:
+En resumen, al elegir un proveedor se debe considerar lo siguiente en su comparación:
+
+El “precio” de un APV es: 
+Ahorro + Rentabilidad + Beneficio tributario - 
+Costo ahorro (TAC en FFMM) - Costo seguro (si aplica)
+
+Ahorro
+Dependerá de cada ahorrante
+Del Seguro asociado al APB
+Rentabilidad
+Considerar Riesgo Equivalente
+Horizonte de Inversión Equivalente
+Proyectar historia reciente
+
+Beneficio Tributario
+Según Régimen (A o B)
+Según segmento de renta bruta del ahorrante
+Permite evaluar el “beneficio” tributario o del estado (en el aporte)
+Costos de la cuenta de ahorro
+Sobre el fondo
+TAC del fondo mutuo
+Del Seguro asociado al APV
+Costos de coberturas (están sólo en condicionados particulares, pero se pueden estimar)
