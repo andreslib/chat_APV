@@ -10,6 +10,15 @@ body {
     padding: 0;
 }
 
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 60px;
+    }
+}
+
 #chat-header {
     text-align: center;
     margin-top: 20px;
@@ -245,6 +254,38 @@ button:hover {
     margin-top: 10px;
 }
 
+/* 🔹 Chat Input Styling */
+#chat-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 80%;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#chat-input:focus {
+    border-color: #007bff;
+}
+
+/* 🔹 Chat Send Button */
+#chat-form button {
+    padding: 12px 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+#chat-form button:hover {
+    background: #0056b3;
+}
 
 /* Container Styling */
 .apv-form-container {
