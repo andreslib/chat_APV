@@ -153,6 +153,8 @@ button {
     padding: 14px 20px;
     border: none;
     background: #007bff;
+    max-width: 250px;
+    width: auto;
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -168,7 +170,24 @@ button:hover {
 @media screen and (max-width: 768px) {
     button {
         width: 100%;
+        max-width: 250px; /* ✅ Ensures button is not too wide on mobile */
         margin-top: 5px;
+    }
+}
+
+
+/* Reduce size of Send button only */
+.send-button {
+    padding: 10px 16px; /* Smaller padding */
+    font-size: 14px; /* Reduce font size */
+    max-width: 120px; /* Limit width */
+}
+
+@media screen and (max-width: 768px) {
+    .send-button {
+        max-width: 80px;
+        padding: 8px 14px;
+        font-size: 13px;
     }
 }
 
@@ -354,22 +373,24 @@ button:hover {
 /* Inputs & Selects */
 .apv-form-input {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
     background-color: white;
     margin-top: 4px;
+    font-size: 16px; /* Bigger text for readability */
 }
 
 /* Button */
 .apv-form-button {
     width: 100%;
+    max-width: 250px; /* Prevents button from getting too wide */
     background-color: #007bff;
     color: white;
     font-size: 14px;
     font-weight: 600;
-    padding: 10px;
+    padding: 12px; /* Prevents it from being too bulky */
     border: none;
     border-radius: 6px;
     margin-top: 12px;
@@ -379,6 +400,20 @@ button:hover {
 
 .apv-form-button:hover {
     background-color: #0056b3;
+}
+
+/* 🔹 Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .apv-form-input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .apv-form-button {
+        font-size: 14px;
+        padding: 10px;
+        max-width: 220px; /* ✅ Ensures it's not overly large on mobile */
+    }
 }
 
 /* Close button styling */
