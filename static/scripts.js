@@ -75,6 +75,14 @@ document.addEventListener("DOMContentLoaded", function () {
         return `$${value.toLocaleString("es-CL")}`; // Format to Chilean Pesos (CLP)
     };
 
+    // Close Form
+    window.closeApvForm = function () {
+        let formDiv = document.getElementById("apv-form-container");
+        if (formDiv) {
+            formDiv.remove(); // ✅ Removes the APV form from the DOM
+        }
+    };
+
     function showApvForm() {
         
         let existingForm = document.getElementById("apv-form-container");
@@ -113,15 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     chatbox.appendChild(formDiv);
 
-
-
-        // Function to remove the form when "X" is clicked
-        window.closeApvForm() = function() {
-            let formDiv = document.getElementById("apv-form-container");
-            if (formDiv) {
-                formDiv.parentNode.removeChild(formDiv); // ✅ Ensures the form is removed
-            }
-        }
 
         // 🔹 Attach event listeners AFTER the inputs exist
         setTimeout(() => {
