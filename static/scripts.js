@@ -174,7 +174,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     let formattedSavingsHigher = formatCurrencyNumber(data.savings_higher);
                     let formattedSavingsLower = formatCurrencyNumber(data.savings_lower);
                     console.log("SO FAR SO GOOD")
-                    let message_new = addMessageToChat(`✅ En tu caso, el mejor régimen es ${data.best_regimen} con un ahorro de ${formattedSavingsHigher} pesos, que es mayor que el ahorro de ${formattedSavingsLower} pesos en el otro régimen.`, "bot");
+                    if (data.best_regimen = "A") {
+                        let message_new = addMessageToChat(`✅ En tu caso, el mejor régimen es ${data.best_regimen} con un ahorro de ${formattedSavingsHigher} pesos, que es mayor al ahorro de ${formattedSavingsLower} pesos en el régimen B.`, "bot");
+                    } else {
+                        let message_new = addMessageToChat(`✅ En tu caso, el mejor régimen es ${data.best_regimen} con un ahorro de ${formattedSavingsHigher} pesos, que es mayor al ahorro de ${formattedSavingsLower} pesos en el otro régimen A.`, "bot");
+                    }
+                addMessageToChat("¿Te gustaría que te ayude en algo más?", "bot")    
                 }
             })
         }
