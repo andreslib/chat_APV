@@ -43,22 +43,26 @@ body {
 }
 
 #chat-container {
-    width: 60%;
-    height: 85%;
+    width: 90%;
     max-width: 600px;
+    height: auto;
     background: white;
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* 🔹 Asegura que todo esté centrado */
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* 🔹 Centrado exacto */
+    align-items: center;
+    position: relative;
+}
+
+@media screen and (max-width: 768px) {
+    #chat-container {
+        width: 95%;
+        height: 100vh;
+        border-radius: 0;
+        padding: 15px;
+    }
 }
 
 /* 🔹 Chatbox should have some spacing for better UI */
@@ -73,6 +77,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+@media screen and (max-width: 768px) {
+    #chatbox {
+        height: 70vh;
+    }
 }
 
 /* 🔹 Contenedor del toggle y botón */
@@ -153,6 +163,13 @@ button {
 
 button:hover {
     background: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+    button {
+        width: 100%;
+        margin-top: 5px;
+    }
 }
 
 /* 🔹 Estilos para el botón de sugerencia */
@@ -240,7 +257,7 @@ button:hover {
     transition: opacity 0.5s ease-in-out;
 }
 
-/* 🔹 Chat Form Styling */
+/* Chat form for input */
 #chat-form {
     display: flex;
     width: 100%;
@@ -249,9 +266,19 @@ button:hover {
     background: white;
     padding: 12px;
     border-top: 1px solid #ddd;
-    border-radius: 10px;
     box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.05);
     margin-top: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@media screen and (max-width: 768px) {
+    #chat-form {
+        flex-direction: column;
+        padding: 8px;
+    }
 }
 
 /* 🔹 Chat Input Styling */
@@ -288,14 +315,22 @@ button:hover {
 }
 
 /* Container Styling */
+/* Responsive APV Form */
 .apv-form-container {
-    background-color: #f8f9fa; /* Light background */
+    background-color: #f8f9fa;
     border-radius: 8px;
     padding: 15px;
     margin-top: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 350px;
+}
+
+@media screen and (max-width: 768px) {
+    .apv-form-container {
+        width: 90%;
+        padding: 15px;
+    }
 }
 
 /* Title */
