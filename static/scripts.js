@@ -76,36 +76,52 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     function showApvForm() {
+        
+        let existingForm = document.getElementById("apv-form-container");
+        if (existingForm) existingForm.remove();
+        
         let formDiv = document.createElement("div");
-formDiv.classList.add("chat-message", "bot-message", "apv-form"); // Added new class
+        formDiv.id = "apv-form-container"; // Add ID for reference
+        formDiv.classList.add("apv-form-container", "apv-form-popup"); // Mobile-friendly modal
 
-formDiv.innerHTML = `
-    <div class="apv-form-container">
-        <p class="apv-form-title">💡 Ingresa los datos para calcular tu beneficio tributario de APV.</p>
+        formDiv.innerHTML = `
+            <button class="close-btn" onclick="closeApvForm()">×</button> <!-- ✅ Moved this inside the form -->
+            <div class="apv-form-content">
+            <p class="apv-form-title">💡 Ingresa los datos para calcular tu beneficio tributario de APV.</p>
+            
+            <label for="regimen">Régimen:</label>
+            <select id="regimen" class="apv-form-input">
+                <option value="A">A</option>
+                <option value="B">B</option>
+            </select>
 
-        <label for="regimen" class="apv-form-label">Régimen:</label>
-        <select id="regimen" class="apv-form-input">
-            <option value="A">A</option>
-            <option value="B">B</option>
-        </select>
+            <label for="yearly_savings">¿Cuánto quieres ahorrar al año en pesos?</label>
+            <input type="text" id="yearly_savings" class="apv-form-input" placeholder="$100.000">
 
-        <label for="yearly_savings" class="apv-form-label">¿Cuánto quieres ahorrar al año en pesos?</label>
-        <input type="text" id="yearly_savings" class="apv-form-input" placeholder="$100.000">
+            <label for="monthly_income">¿Cuál es tu renta imponible mensual en pesos?</label>
+            <input type="text" id="monthly_income" class="apv-form-input" placeholder="$1.000.000">
 
-        <label for="monthly_income" class="apv-form-label">¿Cuál es tu renta imponible mensual en pesos?</label>
-        <input type="text" id="monthly_income" class="apv-form-input" placeholder="$1.000.000">
+            <label for="employment_type">¿Eres Dependiente?</label>
+            <select id="employment_type" class="apv-form-input">
+                <option value="dependent">Dependiente</option>
+                <option value="independent">Independiente</option>
+            </select>
 
-        <label for="employment_type" class="apv-form-label">¿Eres Dependiente?</label>
-        <select id="employment_type" class="apv-form-input">
-            <option value="dependent">Dependiente</option>
-            <option value="independent">Independiente</option>
-        </select>
+            <button class="apv-form-button" onclick="calculateApv()">Calcular ahorro APV</button>
+        </div>
+    `;
 
-        <button class="apv-form-button" onclick="calculateApv()">Calcular ahorro APV</button>
-    </div>
-`;
+    chatbox.appendChild(formDiv);
 
-chatbox.appendChild(formDiv);
+
+
+        // Function to remove the form when "X" is clicked
+        window.closeApvForm() = function() {
+            let formDiv = document.getElementById("apv-form-container");
+            if (formDiv) {
+                formDiv.parentNode.removeChild(formDiv); // ✅ Ensures the form is removed
+            }
+        }
 
         // 🔹 Attach event listeners AFTER the inputs exist
         setTimeout(() => {
