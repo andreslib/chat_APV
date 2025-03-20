@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request, jsonify
+import os
+from dotenv import load_dotenv
 import json
 import openai
 import re
 
-# OPENAI key
+# info
 import constants
 
 # código de ahorro impuestos
@@ -13,7 +15,8 @@ from calculate_apv import calculate_apv_savings, recommend_best_regimen  # Impor
 app = Flask(__name__)
 
 # Configura la API Key de OpenAI (reemplazar con tu clave)
-OPENAI_API_KEY = constants.OPENAI_KEY
+load_dotenv()
+OPENAI_API_KEY = os.getenv('OPENAI_KEY')
 openai.api_key = OPENAI_API_KEY
 
 # AI model
