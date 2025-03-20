@@ -194,7 +194,8 @@ document.addEventListener("DOMContentLoaded", function () {
             if (data.error) {
                 addMessageToChat(`❌ Error: ${data.error}`, "bot");
             } else {
-                addMessageToChat(`✅ Tus ahorros fiscales son: ${data.tax_savings.toLocaleString()} pesos bajo el Régimen ${data.regimen}`, "bot");
+                let formattedSavings = formatCurrencyNumber(data.tax_savings);
+                addMessageToChat(`✅ Con APV bajo el Régimen ${data.regimen} te ahorras ${formattedSavings} pesos.`, "bot");
             }
             // chatbox.appendChild(resultDiv);
         })
