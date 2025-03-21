@@ -9,7 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
     function addMessageToChat(text, sender) {
         let message = document.createElement("div");
         message.className = sender === "bot" ? "message bot-message" : "message user-message";
-        message.innerText = text;
+        
+        if (sender === "bot") {
+            message.innerHTML = text; // ✅ allows bold, links, etc.
+        } else {
+            message.innerText = text; // ✅ keep user input as plain text
+        }
+
         chatbox.appendChild(message);
         // 🔹 Centrar el scroll en el inicio de la nueva respuesta en lugar del final
         setTimeout(() => {
@@ -23,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function showWelcomeMessage() {
         setTimeout(() => {
             addMessageToChat("👋 ¡Hola! Soy APV Bot, tu asistente de APV.", "bot");
-            addMessageToChat("💡 Puedo ayudarte con tus decisiones de inversión para APV o puedes explorar el chat por tu cuenta.", "bot");
+            addMessageToChat("💡 Puedo ayudarte con tus decisiones de ahorro usando APV o puedes explorar el chat por tu cuenta.", "bot");
             setTimeout(showAPVSuggestion, 1000); // Agregar el botón de sugerencia después de 1 segundo
         }, 500);
     }
@@ -83,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    function showApvForm() {
+    window.showApvForm = function() {
         
         let existingForm = document.getElementById("apv-form-container");
         if (existingForm) existingForm.remove();
@@ -175,11 +181,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     let formattedSavingsLower = formatCurrencyNumber(data.savings_lower);
                     console.log("SO FAR SO GOOD")
                     if (data.best_regimen = "A") {
-                        let message_new = addMessageToChat(`✅ En tu caso, el mejor régimen es ${data.best_regimen} con un ahorro de ${formattedSavingsHigher} pesos, que es mayor al ahorro de ${formattedSavingsLower} pesos en el régimen B.`, "bot");
+                        let message_new = addMessageToChat(`✅ En tu caso, el mejor régimen es ${data.best_regimen} con un ahorro de ${formattedSavingsHigher} pesos, que es mayor al ahorro de ${formattedSavingsLower} pesos si eliges el régimen B.`, "bot");
                     } else {
-                        let message_new = addMessageToChat(`✅ En tu caso, el mejor régimen es ${data.best_regimen} con un ahorro de ${formattedSavingsHigher} pesos, que es mayor al ahorro de ${formattedSavingsLower} pesos en el otro régimen A.`, "bot");
+                        let message_new = addMessageToChat(`✅ En tu caso, el mejor régimen es ${data.best_regimen} con un ahorro de ${formattedSavingsHigher} pesos, que es mayor al ahorro de ${formattedSavingsLower} pesos si eliges el régimen A.`, "bot");
                     }
-                addMessageToChat("¿Te gustaría que te ayude en algo más?", "bot")    
+                addMessageToChat(
+                    `Recuerda que puedes volver a este formulario en cualquier minuto escribiendo el mensaje <strong><a href="#" onclick="showApvForm()" style="color: #007bff; text-decoration: none;">ayudaAPV</a></strong> (todo junto).`,
+                    "bot"
+                    );                
+                setTimeout(() => {
+                    addMessageToChat("¿Te gustaría que te ayude en algo más?", "bot")
+                }, 1000);     
                 }
             })
         }
@@ -235,6 +247,21 @@ document.addEventListener("DOMContentLoaded", function () {
     window.sendMessage = function sendMessage() {
         let userInput = document.getElementById('user-input').value;
         if (userInput.trim() === "") return;
+
+        const normalized = userInput.trim().toLowerCase();
+
+        // ✅ Always show the user's message first
+        addMessageToChat(userInput, "user");
+
+        // ✅ Then check for custom triggers
+        if (normalized === "ayudaapv") {
+            setTimeout(() => {
+                addMessageToChat("Entendido 👍 Te mostraré el formulario APV.", "bot");
+                showApvForm();
+            }, 300); // Small delay to feel natural
+            document.getElementById('user-input').value = "";
+            return;
+        }
 
         let oldSuggestions = document.querySelectorAll(".suggestion-buttons");
         oldSuggestions.forEach(element => element.remove());

@@ -1,3 +1,7 @@
+# Specific BOT files
+# local feedback should not be commited
+feedback.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
