@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <label for="yearly_savings">¿Cuánto quieres ahorrar al año en pesos?</label>
             <input type="text" id="yearly_savings" class="apv-form-input" placeholder="$100.000">
 
-            <label for="monthly_income">¿Cuál es tu renta imponible mensual en pesos?</label>
+            <label for="monthly_income">¿Cuál es tu renta imponible mensual en pesos? (corresponde a tu sueldo bruto menos AFP, salud (Fonasa o Isapre) y seguro de cesantía, osea es el sueldo que te llega)</label>
             <input type="text" id="monthly_income" class="apv-form-input" placeholder="$1.000.000">
 
             <label for="employment_type">¿Eres Dependiente?</label>
