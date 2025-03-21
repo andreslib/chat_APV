@@ -81,7 +81,7 @@ body {
 
 @media screen and (max-width: 768px) {
     #chatbox {
-        height: 70vh;
+        height: 60vh;
     }
 }
 

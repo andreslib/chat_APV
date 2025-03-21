@@ -98,6 +98,10 @@ document.addEventListener("DOMContentLoaded", function () {
         formDiv.id = "apv-form-container"; // Add ID for reference
         formDiv.classList.add("apv-form-container", "apv-form-popup"); // Mobile-friendly modal
 
+        setTimeout(() => {
+            formDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+
         formDiv.innerHTML = `
             <button class="close-btn" onclick="closeApvForm()">×</button> <!-- ✅ Moved this inside the form -->
             <div class="apv-form-content">
@@ -186,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         let message_new = addMessageToChat(`✅ En tu caso, el mejor régimen es ${data.best_regimen} con un ahorro de ${formattedSavingsHigher} pesos, que es mayor al ahorro de ${formattedSavingsLower} pesos si eliges el régimen A.`, "bot");
                     }
                 addMessageToChat(
-                    `Recuerda que puedes volver a este formulario en cualquier minuto escribiendo el mensaje <strong><a href="#" onclick="showApvForm()" style="color: #007bff; text-decoration: none;">ayudaAPV</a></strong> (todo junto).`,
+                    `Recuerda que puedes volver a este formulario en cualquier minuto escribiendo el mensaje <strong><a href="#" onclick="event.preventDefault(); showApvForm();" style="color: #007bff; text-decoration: none;">ayudaAPV</a></strong> (todo junto).`,
                     "bot"
                     );                
                 setTimeout(() => {
