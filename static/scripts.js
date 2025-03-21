@@ -231,6 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 button_intro.innerText = "¿Cuál régimen me conviene?";
 
                 button_intro.onclick = function () {
+    
                     console.log("getBestAPV() called"); // Debugging log
                     getBestAPV();
                 };
@@ -268,8 +269,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let userMessage = document.createElement("div");
         userMessage.className = "message user-message";
-        userMessage.innerText = userInput;
-        chatbox.appendChild(userMessage);
+        // userMessage.innerText = userInput;
+        // chatbox.appendChild(userMessage);
 
         let loader = document.getElementById('loader');
         if (loader) loader.style.display = "block";
