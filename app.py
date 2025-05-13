@@ -4,16 +4,29 @@ from dotenv import load_dotenv
 import json
 import openai
 import re
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 # código de ahorro impuestos
 from calculate_apv import calculate_apv_savings, recommend_best_regimen  # Import the module
 
 # inicializa la app
 app = Flask(__name__)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 
-# Configura la API Key de OpenAI (reemplazar con tu clave)
+# Security headers
+@app.after_request
+def add_security_headers(response):
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+    response.headers['X-Frame-Options'] = 'SAMEORIGIN'
+    response.headers['X-XSS-Protection'] = '1; mode=block'
+    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    return response
+
+# Configura la API Key de OpenAI
 load_dotenv()
 OPENAI_API_KEY = os.getenv('OPENAI_KEY')
+if not OPENAI_API_KEY:
+    raise ValueError("OPENAI_KEY environment variable is not set")
 openai.api_key = OPENAI_API_KEY
 
 # AI model
@@ -136,4 +149,6 @@ def recommend_best():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Only enable debug mode in development
+    debug_mode = os.getenv('FLASK_ENV') == 'development'
+    app.run(debug=debug_mode, host='0.0.0.0')

@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showWelcomeMessage() {
         setTimeout(() => {
-            addMessageToChat("👋 ¡Hola! Soy APV Bot, tu asistente de APV.", "bot");
-            addMessageToChat("💡 Puedo ayudarte con tus decisiones de ahorro usando APV o puedes explorar el chat por tu cuenta.", "bot");
+            addMessageToChat("👋 ¡Hola! Soy tu asistente de decisiones de APV.", "bot");
+            addMessageToChat("💡 Puedes partir apretando los botones de sugerencia o puedes explorar escribiendo en el chat por tu cuenta.", "bot");
             setTimeout(showAPVSuggestion, 1000); // Agregar el botón de sugerencia después de 1 segundo
         }, 500);
     }
@@ -185,9 +185,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     let formattedSavingsLower = formatCurrencyNumber(data.savings_lower);
                     console.log("SO FAR SO GOOD")
                     if (data.best_regimen = "A") {
-                        let message_new = addMessageToChat(`✅ En tu caso, el mejor régimen es ${data.best_regimen} con un ahorro de ${formattedSavingsHigher} pesos, que es mayor al ahorro de ${formattedSavingsLower} pesos si eliges el régimen B.`, "bot");
+                        let message_new = addMessageToChat(`✅ En tu caso, el mejor régimen es ${data.best_regimen} con un beneficio tributario de ${formattedSavingsHigher} pesos, que es mayor al beneficio tributario de ${formattedSavingsLower} pesos si eliges el régimen B.`, "bot");
                     } else {
-                        let message_new = addMessageToChat(`✅ En tu caso, el mejor régimen es ${data.best_regimen} con un ahorro de ${formattedSavingsHigher} pesos, que es mayor al ahorro de ${formattedSavingsLower} pesos si eliges el régimen A.`, "bot");
+                        let message_new = addMessageToChat(`✅ En tu caso, el mejor régimen es ${data.best_regimen} con un beneficio tributario de ${formattedSavingsHigher} pesos, que es mayor al beneficio tributario de ${formattedSavingsLower} pesos si eliges el régimen A.`, "bot");
                     }
                 addMessageToChat(
                     `Recuerda que puedes volver a este formulario en cualquier minuto escribiendo el mensaje <strong><a href="#" onclick="event.preventDefault(); showApvForm();" style="color: #007bff; text-decoration: none;">ayudaAPV</a></strong> (todo junto).`,
@@ -216,13 +216,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 addMessageToChat(`❌ Error: ${data.error}`, "bot");
             } else {
                 let formattedSavings = formatCurrencyNumber(data.tax_savings);
-                addMessageToChat(`✅ Con APV bajo el Régimen ${data.regimen} te ahorras ${formattedSavings} pesos.`, "bot");
-            }
-            // chatbox.appendChild(resultDiv);
+                setTimeout(() => {  
+                    addMessageToChat(`✅ Con APV bajo el Régimen ${data.regimen} tu beneficio tributario es de ${formattedSavings} pesos.`, "bot");
+                    if (data.regimen = "A") {
+                        addMessageToChat(`Esto corresponde a una bonificación fiscal de un 15% de lo ahorrado anualmente, con tope de 6 UTM al año (unos $409.836, que equivale al 15% del ahorro máximo de $2.732.240).`, "bot");
+                    } else {
+                        addMessageToChat(`Este régimen rebaja la base imponible del impuesto global complementario, es decir el monto sobre el cual te calculan los impuestos, con tope de UF 50 mensuales (aproximadamente $1.944.956 de pesos) o UF 600 anuales (aproximadamente $23.300.436 de pesos)`, "bot");
+                    }
+                    addMessageToChat("¿Te gustaría que te ayudemos a elegir en cuál régimen te conviene invertir?", "bot");    
+
+                }, 500);  
+                  
+                }
         })
 
         setTimeout(() => {
-            addMessageToChat("¿Te gustaría que te ayudemos a elegir en cuál régimen te conviene invertir, o tienes alguna otra pregunta?", "bot");
             setTimeout(() => {
                 let oldSuggestions_intro = document.querySelectorAll(".suggestion-buttons");
                 oldSuggestions_intro.forEach(element => element.remove());
